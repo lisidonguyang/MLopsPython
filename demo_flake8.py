@@ -1,5 +1,4 @@
 from pathlib import Path
-yolo
 
 print(
     "hellor world hellor world hellor world hellor world hellor world hellor world hellor world hellor world hellor world"
