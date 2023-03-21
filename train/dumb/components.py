@@ -1,6 +1,5 @@
 # ./train/dumb/components.py
 from pathlib import Path
-from random import randint
 from uuid import uuid4
 
 # mldesigner package contains the command_component which can be used to define component from a python function

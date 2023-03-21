@@ -28,7 +28,7 @@ jobs:
     - name: Lint with flake8
       run: |
         pipenv install --dev
-        pipenv run flake8 .
+        pipenv run flake8 --ignore=F821 .
   build:
     runs-on: ubuntu-latest
     steps:

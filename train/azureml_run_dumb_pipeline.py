@@ -1,5 +1,7 @@
 # ./train/azureml_run_dumb_pipeline.py
 from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential
+from azure.ai.ml.entities import AmlCompute
+from dumb.components import train_model, score_data, eval_model
 
 from azure.ai.ml import MLClient, Input, Output
 from azure.ai.ml.dsl import pipeline
@@ -23,7 +25,6 @@ ml_client = MLClient(
 
 # Retrieve an already attached Azure Machine Learning Compute.
 cluster_name = "justin-hansz"
-from azure.ai.ml.entities import AmlCompute
 cluster_basic = AmlCompute(
     name=cluster_name,
     type="amlcompute",
@@ -36,7 +37,6 @@ cluster_basic = AmlCompute(
 ml_client.begin_create_or_update(cluster_basic).result()
 
 
-from dumb.components import train_model, score_data, eval_model
 
 custom_path = "azureml://datastores/workspaceblobstore/paths/custom_path/${{name}}/"
 
