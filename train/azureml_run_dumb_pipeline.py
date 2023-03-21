@@ -16,13 +16,13 @@ except Exception as ex:
 # Get a handle to workspace
 ml_client = MLClient(
     credential=credential,
-    subscription_id="<327923ef-3414-4488-99dc-4c8144c48dde>",
-    resource_group_name="<cats-dogs-others-ressource>",
-    workspace_name="<cats-dogs-others>",
+    subscription_id="327923ef-3414-4488-99dc-4c8144c48dde",
+    resource_group_name="cats-dogs-others-ressource",
+    workspace_name="cats-dogs-others",
 )
 
 # Retrieve an already attached Azure Machine Learning Compute.
-cluster_name = "<justin-hansz>"
+cluster_name = "justin-hansz"
 from azure.ai.ml.entities import AmlCompute
 cluster_basic = AmlCompute(
     name=cluster_name,
