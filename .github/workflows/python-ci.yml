@@ -48,7 +48,7 @@ jobs:
         pipenv install --dev
         pipenv run coverage run -m unittest tests.extraction_test
         pipenv run coverage report
-        - name: azure login
+    - name: azure login
     - uses: azure/login@v1
       with:
         creds: ${{secrets.AZUREML_CREDENTIALS}}
