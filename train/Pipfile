@@ -7,9 +7,11 @@ name = "pypi"
 azure-ai-ml = "==1.4.0"
 mldesigner = "==0.1.0b11"
 "azure.identity" = "==1.12.0"
+fitz = "*"
 
 [dev-packages]
 coverage = "===7.1.0"
+fitz = "*"
 
 [requires]
 python_version = "3.11"
