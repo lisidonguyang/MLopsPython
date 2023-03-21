@@ -1,15 +1,11 @@
 import unittest
 from pathlib import Path
-from PIL import Image
-import filecmp
-import fitz
-import sys
+
 
 class TestExtractPdfToPng(unittest.TestCase):
 
     def test_extract_pdfs_to_png(self):
-        from io import BytesIO
-        from fitz import Pixmap
+
 
         # setting path
         from extraction import extract_pdf_to_png
