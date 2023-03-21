@@ -2,7 +2,6 @@ import unittest
 from pathlib import Path
 from PIL import Image
 import filecmp
-import PyPDF2
 import fitz
 
 class TestExtractPdfToPng(unittest.TestCase):
