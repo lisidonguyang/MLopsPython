@@ -5,6 +5,8 @@ name = "pypi"
 
 [packages]
 pymupdf = "===1.21.1"
+pillow = "*"
+
 
 [dev-packages]
 flake8 = "===6.0.0"
