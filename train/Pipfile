@@ -8,6 +8,7 @@ azure-ai-ml = "==1.4.0"
 mldesigner = "==0.1.0b11"
 "azure.identity" = "==1.12.0"
 fitz = "*"
+pymupdf = "*"
 
 [dev-packages]
 coverage = "===7.1.0"
