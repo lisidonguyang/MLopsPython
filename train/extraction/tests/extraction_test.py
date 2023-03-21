@@ -6,7 +6,6 @@ class TestExtractPdfToPng(unittest.TestCase):
 
     def test_extract_pdfs_to_png(self):
 
-
         # setting path
         from extraction import extract_pdf_to_png
 

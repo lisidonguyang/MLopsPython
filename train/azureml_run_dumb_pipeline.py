@@ -10,7 +10,7 @@ try:
     credential = DefaultAzureCredential()
     # Check if given credential can get token successfully.
     credential.get_token("https://management.azure.com/.default")
-except Exception as ex:
+except Exception:
     # Fall back to InteractiveBrowserCredential in case DefaultAzureCredential not work
     credential = InteractiveBrowserCredential()
 
@@ -29,20 +29,21 @@ cluster_basic = AmlCompute(
     name=cluster_name,
     type="amlcompute",
     size="Standard_D4s_v3",
-    location="northeurope", #az account list-locations -o table
+    location="northeurope",  # az account list-locations -o table
     min_instances=0,
     max_instances=1,
     idle_time_before_scale_down=60,
 )
 ml_client.begin_create_or_update(cluster_basic).result()
 
-
-
 custom_path = "azureml://datastores/workspaceblobstore/paths/custom_path/${{name}}/"
 
 # define a pipeline with component
+
+
 @pipeline(default_compute=cluster_name)
 def pipeline_with_python_function_components(input_data, test_data, learning_rate):
+
     """E2E dummy train-score-eval pipeline with components defined via python function components"""
 
     # Call component obj as function: apply given inputs & parameters to create a node in pipeline
