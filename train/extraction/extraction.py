@@ -1,4 +1,4 @@
-def extract_pdf_to_png():
+def extract_pdf_to_png(pdfs_directory_path):
     from io import BytesIO
     from pathlib import Path
     import fitz
@@ -12,7 +12,7 @@ def extract_pdf_to_png():
         else:
             return fitz.Pixmap(fitz.csRGB, pixmap)
 
-    pdfs_directory_path = "./dataset-cats-dogs-others"
+    #pdfs_directory_path = "./dataset-cats-dogs-others"
     images_directory_path = ".extracted_images"
     Path(images_directory_path).mkdir(parents=True, exist_ok=True)
     files = [p for p in Path(pdfs_directory_path).iterdir() if p.is_file()]
@@ -30,5 +30,6 @@ def extract_pdf_to_png():
                         pix = fitz.Pixmap(d, xref)
                         bytes = BytesIO(convert_pixmap_to_rgb(pix).tobytes())
                         fn = path.stem + "_page" + str(i) + "_index" + str(j) + ".png"
-                        with open(images_directory_path + "\\" + fn, "wb") as f:
+                        with open(images_directory_path + "/" + fn, "wb") as f:
                             f.write(bytes.getbuffer())
+

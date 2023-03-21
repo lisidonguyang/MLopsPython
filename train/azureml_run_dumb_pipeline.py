@@ -16,13 +16,13 @@ except Exception as ex:
 # Get a handle to workspace
 ml_client = MLClient(
     credential=credential,
-    subscription_id="<subscription-id>",
-    resource_group_name="<resource-group-name>",
-    workspace_name="<workspace-name>",
+    subscription_id="<327923ef-3414-4488-99dc-4c8144c48dde>",
+    resource_group_name="<cats-dogs-others-ressource>",
+    workspace_name="<cats-dogs-others>",
 )
 
 # Retrieve an already attached Azure Machine Learning Compute.
-cluster_name = "<cluster-name>"
+cluster_name = "<justin-hansz>"
 from azure.ai.ml.entities import AmlCompute
 cluster_basic = AmlCompute(
     name=cluster_name,
@@ -36,7 +36,7 @@ cluster_basic = AmlCompute(
 ml_client.begin_create_or_update(cluster_basic).result()
 
 
-from dumb.components import train_model, score_data, eval_model
+from train.dumb.components import train_model, score_data, eval_model
 
 custom_path = "azureml://datastores/workspaceblobstore/paths/custom_path/${{name}}/"
 
