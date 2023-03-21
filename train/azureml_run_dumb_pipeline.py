@@ -36,7 +36,7 @@ cluster_basic = AmlCompute(
 ml_client.begin_create_or_update(cluster_basic).result()
 
 
-from train.dumb.components import train_model, score_data, eval_model
+from dumb.components import train_model, score_data, eval_model
 
 custom_path = "azureml://datastores/workspaceblobstore/paths/custom_path/${{name}}/"
 
